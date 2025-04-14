@@ -221,6 +221,7 @@ workflows:
             - test-e2e-firefox
             - test-e2e-chrome-flask
             - test-e2e-firefox-flask
+            - test-e2e-firefox-dist
             - test-e2e-chrome-dist
             - test-e2e-chrome-webpack
       - job-publish-prerelease:
