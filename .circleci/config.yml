@@ -793,12 +793,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Vault decryptor tests
-          command: .circleci/scripts/test-run-e2e.sh yarn test:e2e:single test/e2e/vault-decryption-chrome.spec.ts --browser chrome
-          no_output_timeout: 5m
-      - run:
-          name: First install tests
-          command: .circleci/scripts/test-run-e2e.sh yarn test:e2e:single test/e2e/first-install.spec.ts --browser chrome
+          name: Run E2E tests that require a production-like build
+          command: .circleci/scripts/test-run-e2e.sh yarn test:e2e:chrome:dist
           no_output_timeout: 5m
       - store_artifacts:
           path: test-artifacts
@@ -814,8 +810,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: First install tests
-          command: .circleci/scripts/test-run-e2e.sh yarn test:e2e:single test/e2e/first-install.spec.ts --browser firefox
+          name: Run E2E tests that require a production-like build
+          command: .circleci/scripts/test-run-e2e.sh yarn test:e2e:firefox:dist
           no_output_timeout: 5m
       - store_artifacts:
           path: test-artifacts

@@ -1,8 +1,8 @@
 import assert from 'assert/strict';
 import { Browser } from 'selenium-webdriver';
-import { withFixtures } from './helpers';
-import { errorMessages } from './webdriver/driver';
-import StartOnboardingPage from './page-objects/pages/onboarding/start-onboarding-page';
+import { withFixtures } from '../helpers';
+import { errorMessages } from '../webdriver/driver';
+import StartOnboardingPage from '../page-objects/pages/onboarding/start-onboarding-page';
 import { hasProperty, isObject } from '@metamask/utils';
 
 // Window handle adjustments will need to be made for Non-MV3 Firefox
