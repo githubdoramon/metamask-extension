@@ -11,6 +11,7 @@ const {
 const cssToXPath = require('css-to-xpath');
 const { sprintf } = require('sprintf-js');
 const lodash = require('lodash');
+const { retry } = require('../../../development/lib/retry');
 const { quoteXPathText } = require('../../helpers/quoteXPathText');
 const { isManifestV3 } = require('../../../shared/modules/mv3.utils');
 const { WindowHandles } = require('../background-socket/window-handles');
@@ -135,9 +136,16 @@ class Driver {
    * @param {!ThenableWebDriver} driver - A {@code WebDriver} instance
    * @param {string} browser - The type of browser this driver is controlling
    * @param {string} extensionUrl
+   * @param {boolean} e2eBuild - Whether the driver is being used with an E2E build or not.
    * @param {number} timeout - Defaults to 10000 milliseconds (10 seconds)
    */
-  constructor(driver, browser, extensionUrl, timeout = 10 * 1000) {
+  constructor(
+    driver,
+    browser,
+    extensionUrl,
+    e2eBuild = true,
+    timeout = 10 * 1000,
+  ) {
     this.driver = driver;
     this.browser = browser;
     this.extensionUrl = extensionUrl;
@@ -145,7 +153,7 @@ class Driver {
     this.exceptions = [];
     this.errors = [];
     this.eventProcessingStack = [];
-    this.windowHandles = new WindowHandles(this.driver);
+    this.windowHandles = e2eBuild ? new WindowHandles(this.driver) : null;
 
     // The following values are found in
     // https://github.com/SeleniumHQ/selenium/blob/trunk/javascript/node/selenium-webdriver/lib/input.js#L50-L110
@@ -1005,7 +1013,9 @@ class Driver {
    */
   async switchToWindow(handle) {
     await this.driver.switchTo().window(handle);
-    await this.windowHandles.getCurrentWindowProperties(null, handle);
+    if (this.windowHandles) {
+      await this.windowHandles.getCurrentWindowProperties(null, handle);
+    }
   }
 
   /**
@@ -1034,7 +1044,10 @@ class Driver {
    *     be resolved with an array of window handles.
    */
   async getAllWindowHandles() {
-    return await this.windowHandles.getAllWindowHandles();
+    if (this.windowHandles) {
+      return await this.windowHandles.getAllWindowHandles();
+    }
+    return await this.driver.getAllWindowHandles();
   }
 
   /**
@@ -1145,7 +1158,41 @@ class Driver {
    * @throws {Error} throws an error if no window with the specified title is found
    */
   async switchToWindowWithTitle(title) {
-    return await this.windowHandles.switchToWindowWithProperty('title', title);
+    if (this.windowHandles) {
+      return await this.windowHandles.switchToWindowWithProperty(
+        'title',
+        title,
+      );
+    }
+
+    let windowHandles = await this.driver.getAllWindowHandles();
+    let timeElapsed = 0;
+
+    while (timeElapsed <= this.timeout) {
+      for (const handle of windowHandles) {
+        const handleTitle = await retry(
+          {
+            retries: 8,
+            delay: 2500,
+          },
+          async () => {
+            await this.driver.switchTo().window(handle);
+            return await this.driver.getTitle();
+          },
+        );
+
+        if (handleTitle === title) {
+          return handle;
+        }
+      }
+      const delayTime = 1000;
+      await this.delay(delayTime);
+      timeElapsed += delayTime;
+      // refresh the window handles
+      windowHandles = await this.driver.getAllWindowHandles();
+    }
+
+    throw new Error(`No window with title: ${title}`);
   }
 
   /**
@@ -1169,6 +1216,9 @@ class Driver {
    * @throws {Error} throws an error if no window with the specified URL is found
    */
   async switchToWindowWithUrl(url) {
+    if (!this.windowHandles) {
+      throw new Error('This is only supported for E2E test builds');
+    }
     return await this.windowHandles.switchToWindowWithProperty(
       'url',
       new URL(url).toString(), // Make sure the URL has a trailing slash
@@ -1185,6 +1235,9 @@ class Driver {
    * @throws {Error} throws an error if no window with the specified URL is found
    */
   async switchToWindowIfKnown(title) {
+    if (!this.windowHandles) {
+      throw new Error('This is only supported for E2E test builds');
+    }
     return await this.windowHandles.switchToWindowIfKnown(title);
   }
 
