@@ -129,19 +129,20 @@ async function main() {
     const dir = 'test/test-results/e2e';
     fs.mkdir(dir, { recursive: true });
 
-    await retry({ retries, stopAfterOneFailure }, async () => {
-      await runInShell('yarn', [
-        'mocha',
-        `--config=${configFile}`,
-        `--timeout=${testTimeoutInMilliseconds}`,
-        '--reporter=mocha-junit-reporter',
-        '--reporter-options',
-        `mochaFile=test/test-results/e2e/[hash].xml,toConsole=true`,
-        ...extraArgs,
-        e2eTestPath,
-        exit,
-      ]);
-    });
+    // await retry({ retries, stopAfterOneFailure }, async () => {
+    await runInShell('yarn', [
+      'mocha',
+      `--config ${configFile}`,
+      `--timeout ${testTimeoutInMilliseconds}`,
+      `--retries ${retries}`,
+      '--reporter mocha-junit-reporter',
+      '--reporter-options',
+      `mochaFile=test/test-results/e2e/[hash].xml,toConsole=true`,
+      ...extraArgs,
+      e2eTestPath,
+      exit,
+    ]);
+    // });
   };
 
   const allBrowsers = ['chrome', 'firefox'];
