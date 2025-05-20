@@ -239,7 +239,7 @@ export default class UnlockPage extends Component {
                 'data-testid': 'unlock-password',
                 'aria-label': t('password'),
               }}
-              placeholder={t('enterPasswordContinue')}
+              placeholder={t('enterYourPassword')}
               type={TextFieldType.Password}
               value={password}
               onChange={(e) => this.handleInputChange(e)}

@@ -46,7 +46,7 @@ exports[`Unlock Page should match snapshot 1`] = `
               data-testid="unlock-password"
               focused="true"
               id="password"
-              placeholder="Enter password to continue"
+              placeholder="Enter your password"
               type="password"
               value=""
             />
