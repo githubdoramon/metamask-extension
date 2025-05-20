@@ -4950,17 +4950,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/api-specs@npm:^0.10.12":
-  version: 0.10.15
-  resolution: "@metamask/api-specs@npm:0.10.15"
-  checksum: 10/1d68914e43dd14a8bafa77d93965e08cb3ee4b036dc161501dd1d565a21c703d03abefd9e91f23019065c316f74719103b44c871409219f6d4d2cd5503224ac2
-  languageName: node
-  linkType: hard
-
 "@metamask/api-specs@npm:^0.13.0":
   version: 0.13.0
   resolution: "@metamask/api-specs@npm:0.13.0"
   checksum: 10/2d9f10e983206f0d830be8d2726aa375fb8877fe5ce6c0ebaba834478e116a5defcfc77594b53988da05b584e0aea08d49db19cc5ec685240c082559e6566a2f
+  languageName: node
+  linkType: hard
+
+"@metamask/api-specs@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "@metamask/api-specs@npm:0.14.0"
+  checksum: 10/6caad5e233c12b87f25313fe1e0fb35af6ad9f0ef49e105b36a1826bd8b611a9335642920ddb6c556343375db4b02138a32598b7185392e50050ae7f390e0e7d
   languageName: node
   linkType: hard
 
@@ -5206,33 +5206,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/chain-agnostic-permission@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@metamask/chain-agnostic-permission@npm:0.2.0"
+"@metamask/chain-agnostic-permission@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@metamask/chain-agnostic-permission@npm:0.7.0"
   dependencies:
-    "@metamask/api-specs": "npm:^0.10.12"
-    "@metamask/controller-utils": "npm:^11.6.0"
-    "@metamask/network-controller": "npm:^23.1.0"
+    "@metamask/api-specs": "npm:^0.14.0"
+    "@metamask/controller-utils": "npm:^11.9.0"
+    "@metamask/network-controller": "npm:^23.5.0"
     "@metamask/permission-controller": "npm:^11.0.6"
     "@metamask/rpc-errors": "npm:^7.0.2"
     "@metamask/utils": "npm:^11.2.0"
     lodash: "npm:^4.17.21"
-  checksum: 10/b3121bdbcc2a14d44802ad1799045b4a01c99047fa2675a639b3ebed51a1b30eba071b5a8d8cbf5a045204670a4ef159c44560036013f54a368a6e80071dd5df
-  languageName: node
-  linkType: hard
-
-"@metamask/chain-agnostic-permission@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@metamask/chain-agnostic-permission@npm:0.6.0"
-  dependencies:
-    "@metamask/api-specs": "npm:^0.10.12"
-    "@metamask/controller-utils": "npm:^11.7.0"
-    "@metamask/network-controller": "npm:^23.3.0"
-    "@metamask/permission-controller": "npm:^11.0.6"
-    "@metamask/rpc-errors": "npm:^7.0.2"
-    "@metamask/utils": "npm:^11.2.0"
-    lodash: "npm:^4.17.21"
-  checksum: 10/ddc439fe4f01006fc3cc521188787910d275e686f11fa8b580c8b170e94b56692032f5331060f4b8cc94ed36c34d0d048af8af09a52cfe68518e0d3435329c22
+  checksum: 10/282bea48271e4eb3c8a7b2ca5c7ecdaed0ecf9c584cfe3a3e7c5aa6e1cc0ce93d6a9eb2e95cf132cc88285572154f868d320d603ea0b1a92c5b55cd07e50eb9d
   languageName: node
   linkType: hard
 
@@ -5935,21 +5920,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/multichain-api-middleware@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@metamask/multichain-api-middleware@npm:0.1.1"
+"@metamask/multichain-api-middleware@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@metamask/multichain-api-middleware@npm:0.3.0"
   dependencies:
-    "@metamask/api-specs": "npm:^0.10.12"
-    "@metamask/chain-agnostic-permission": "npm:^0.2.0"
+    "@metamask/api-specs": "npm:^0.14.0"
+    "@metamask/chain-agnostic-permission": "npm:^0.7.0"
+    "@metamask/controller-utils": "npm:^11.9.0"
     "@metamask/json-rpc-engine": "npm:^10.0.3"
-    "@metamask/network-controller": "npm:^23.1.0"
+    "@metamask/network-controller": "npm:^23.5.0"
     "@metamask/permission-controller": "npm:^11.0.6"
     "@metamask/rpc-errors": "npm:^7.0.2"
     "@metamask/utils": "npm:^11.2.0"
     "@open-rpc/meta-schema": "npm:^1.14.6"
     "@open-rpc/schema-utils-js": "npm:^2.0.5"
     jsonschema: "npm:^1.4.1"
-  checksum: 10/f4f18243c2133f7eb5827a80583f378727c460255f95f723d88b664705b8b0e8f12428b6bf16975cc2cbfec35c21797c84ab96a09317412c37135f4afd697f2f
+  checksum: 10/7d4fbb211b2679d48ea6567185ccdd9d683e3e1cbfafba0c465dc1f53dc320dbaf924f2acbe83fff9a9b9c9d0063c35d153b6e9d48a4c5a853c2aa4cb6469571
   languageName: node
   linkType: hard
 
@@ -6024,7 +6010,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/network-controller@npm:23.5.0, @metamask/network-controller@npm:^23.1.0, @metamask/network-controller@npm:^23.3.0":
+"@metamask/network-controller@npm:23.5.0, @metamask/network-controller@npm:^23.5.0":
   version: 23.5.0
   resolution: "@metamask/network-controller@npm:23.5.0"
   dependencies:
@@ -6676,10 +6662,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/test-dapp-multichain@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@metamask/test-dapp-multichain@npm:0.10.0"
-  checksum: 10/9840f9dbbfe289de159dc9d950aea923a4154980e5e31fd68a67bc21437f23c35d85ce8a4fc36e7f51234353a5d2ec83af04e56ad95ded93f624ee63050e55bb
+"@metamask/test-dapp-multichain@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "@metamask/test-dapp-multichain@npm:0.12.0"
+  checksum: 10/eac5b08a98ae7bb4aa382cffc26be1338f991f5acbbbc0cbb2962f52211f78ab83fea026bb944ddf2ad6dae08a8c862bd9c589cd9e7af662bf8bcff0682057fd
   languageName: node
   linkType: hard
 
@@ -13497,12 +13483,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:<18.0.0, @types/react-dom@npm:^17.0.11":
+"@types/react-dom@npm:<18.0.0":
   version: 17.0.26
   resolution: "@types/react-dom@npm:17.0.26"
   peerDependencies:
     "@types/react": ^17.0.0
   checksum: 10/86be1faf019b58f2b470a037c291c9c9efa5cf8b3927bfec436d83b12dd7a6a0369554c567c4ca8b59e1ee341b835c1b272cd0340628cbbea75ec43168858e5b
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^17.0.11":
+  version: 17.0.11
+  resolution: "@types/react-dom@npm:17.0.11"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10/6a1130c3e4a8daa79a8c2a2784384e9d64143cc36d54e75e16f0f8b1a24faa1dc0fa0872a118bffe2bb2399f975b245693309950436e858b37f67e83c1f16e4d
   languageName: node
   linkType: hard
 
@@ -19613,7 +19608,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deep-equal@npm:^2.0.5, deep-equal@npm:^2.2.0":
+"deep-equal@npm:^2.0.5":
   version: 2.2.3
   resolution: "deep-equal@npm:2.2.3"
   dependencies:
@@ -19636,6 +19631,32 @@ __metadata:
     which-collection: "npm:^1.0.1"
     which-typed-array: "npm:^1.1.13"
   checksum: 10/1ce49d0b71d0f14d8ef991a742665eccd488dfc9b3cada069d4d7a86291e591c92d2589c832811dea182b4015736b210acaaebce6184be356c1060d176f5a05f
+  languageName: node
+  linkType: hard
+
+"deep-equal@npm:^2.2.0":
+  version: 2.2.2
+  resolution: "deep-equal@npm:2.2.2"
+  dependencies:
+    array-buffer-byte-length: "npm:^1.0.0"
+    call-bind: "npm:^1.0.2"
+    es-get-iterator: "npm:^1.1.3"
+    get-intrinsic: "npm:^1.2.1"
+    is-arguments: "npm:^1.1.1"
+    is-array-buffer: "npm:^3.0.2"
+    is-date-object: "npm:^1.0.5"
+    is-regex: "npm:^1.1.4"
+    is-shared-array-buffer: "npm:^1.0.2"
+    isarray: "npm:^2.0.5"
+    object-is: "npm:^1.1.5"
+    object-keys: "npm:^1.1.1"
+    object.assign: "npm:^4.1.4"
+    regexp.prototype.flags: "npm:^1.5.0"
+    side-channel: "npm:^1.0.4"
+    which-boxed-primitive: "npm:^1.0.2"
+    which-collection: "npm:^1.0.1"
+    which-typed-array: "npm:^1.1.9"
+  checksum: 10/883cb8b3cf10d387ce8fb191f7d7b46b48022e00810074c5629053953aa3be5c5890dd40d30d31d27fb140af9a541c06c852ab5d28f76b07095c9d28e3c4b04f
   languageName: node
   linkType: hard
 
@@ -30025,7 +30046,7 @@ __metadata:
     "@metamask/bridge-status-controller": "patch:@metamask/bridge-status-controller@npm%3A21.0.0#~/.yarn/patches/@metamask-bridge-status-controller-npm-21.0.0-7178a3f32f.patch"
     "@metamask/browser-passworder": "npm:^4.3.0"
     "@metamask/build-utils": "npm:^3.0.0"
-    "@metamask/chain-agnostic-permission": "npm:^0.6.0"
+    "@metamask/chain-agnostic-permission": "npm:^0.7.0"
     "@metamask/contract-metadata": "npm:^2.5.0"
     "@metamask/controller-utils": "npm:^11.9.0"
     "@metamask/delegation-controller": "npm:^0.1.0"
@@ -30065,7 +30086,7 @@ __metadata:
     "@metamask/message-signing-snap": "npm:1.1.2"
     "@metamask/metamask-eth-abis": "npm:^3.1.1"
     "@metamask/multichain-api-client": "npm:^0.6.0"
-    "@metamask/multichain-api-middleware": "npm:^0.1.1"
+    "@metamask/multichain-api-middleware": "npm:^0.3.0"
     "@metamask/multichain-network-controller": "npm:^0.5.1"
     "@metamask/multichain-transactions-controller": "npm:^0.9.0"
     "@metamask/name-controller": "npm:^8.0.3"
@@ -30101,7 +30122,7 @@ __metadata:
     "@metamask/superstruct": "npm:^3.2.1"
     "@metamask/test-bundler": "npm:^1.0.0"
     "@metamask/test-dapp": "npm:9.3.0"
-    "@metamask/test-dapp-multichain": "npm:^0.10.0"
+    "@metamask/test-dapp-multichain": "npm:^0.12.0"
     "@metamask/test-dapp-solana": "npm:^0.1.0"
     "@metamask/transaction-controller": "npm:^56.1.0"
     "@metamask/user-operation-controller": "npm:^31.0.0"
@@ -35633,6 +35654,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regexp.prototype.flags@npm:^1.5.0":
+  version: 1.5.2
+  resolution: "regexp.prototype.flags@npm:1.5.2"
+  dependencies:
+    call-bind: "npm:^1.0.6"
+    define-properties: "npm:^1.2.1"
+    es-errors: "npm:^1.3.0"
+    set-function-name: "npm:^2.0.1"
+  checksum: 10/9fffc01da9c4e12670ff95bc5204364615fcc12d86fc30642765af908675678ebb0780883c874b2dbd184505fb52fa603d80073ecf69f461ce7f56b15d10be9c
+  languageName: node
+  linkType: hard
+
 "regexparam@npm:^3.0.0":
   version: 3.0.0
   resolution: "regexparam@npm:3.0.0"
@@ -37286,7 +37319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-function-name@npm:^2.0.2":
+"set-function-name@npm:^2.0.1, set-function-name@npm:^2.0.2":
   version: 2.0.2
   resolution: "set-function-name@npm:2.0.2"
   dependencies:
@@ -41862,7 +41895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which-typed-array@npm:^1.1.13, which-typed-array@npm:^1.1.14, which-typed-array@npm:^1.1.15, which-typed-array@npm:^1.1.2":
+"which-typed-array@npm:^1.1.13":
   version: 1.1.19
   resolution: "which-typed-array@npm:1.1.19"
   dependencies:
@@ -41874,6 +41907,19 @@ __metadata:
     gopd: "npm:^1.2.0"
     has-tostringtag: "npm:^1.0.2"
   checksum: 10/12be30fb88567f9863186bee1777f11bea09dd59ed8b3ce4afa7dd5cade75e2f4cc56191a2da165113cc7cf79987ba021dac1e22b5b62aa7e5c56949f2469a68
+  languageName: node
+  linkType: hard
+
+"which-typed-array@npm:^1.1.14, which-typed-array@npm:^1.1.15, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
+  version: 1.1.15
+  resolution: "which-typed-array@npm:1.1.15"
+  dependencies:
+    available-typed-arrays: "npm:^1.0.7"
+    call-bind: "npm:^1.0.7"
+    for-each: "npm:^0.3.3"
+    gopd: "npm:^1.0.1"
+    has-tostringtag: "npm:^1.0.2"
+  checksum: 10/c3b6a99beadc971baa53c3ee5b749f2b9bdfa3b3b9a70650dd8511a48b61d877288b498d424712e9991d16019633086bd8b5923369460d93463c5825fa36c448
   languageName: node
   linkType: hard
 
