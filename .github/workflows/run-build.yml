@@ -59,7 +59,7 @@ jobs:
       - name: Checkout and setup environment
         uses: MetaMask/action-checkout-and-setup@v1
         with:
-          is-high-risk-environment: true
+          is-high-risk-environment: false
           skip-allow-scripts: true
 
       - name: Run build
@@ -77,9 +77,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.build-name }}
-          path: |
-            builds
-            dist
+          path: dist
 
       - name: Upload 'builds' to S3
         if: ${{ vars.AWS_REGION && vars.AWS_IAM_ROLE && vars.AWS_S3_BUCKET }}
