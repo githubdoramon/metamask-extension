@@ -204,7 +204,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-dist-browserify
-          path: ./dist/
 
       - name: Measure bundle size
         run: yarn tsx test/e2e/mv3-perf-stats/bundle-size.ts --out test-artifacts/chrome
@@ -275,7 +274,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-dist-browserify
-          path: ./dist/
 
       - run: ./development/source-map-explorer.sh
 
@@ -306,7 +304,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-dist-browserify
-          path: ./dist/
 
       - run: ./.github/scripts/create-lavamoat-viz.sh
 
