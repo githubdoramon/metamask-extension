@@ -505,7 +505,7 @@ jobs:
       # important: generate lavamoat viz AFTER uploading builds as artifacts
       - run:
           name: build:lavamoat-viz
-          command: ./.circleci/scripts/create-lavamoat-viz.sh
+          command: sudo bash ./.circleci/scripts/create-lavamoat-viz.sh
       - store_artifacts:
           path: build-artifacts
           destination: build-artifacts
