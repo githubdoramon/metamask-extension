@@ -289,7 +289,6 @@ jobs:
   build-lavamoat-viz:
     needs:
       - prep-deps
-      - build-dist-browserify
     runs-on: ubuntu-latest
     env:
       INFURA_PROJECT_ID: ${{ secrets.INFURA_PROJECT_ID }}
@@ -299,11 +298,6 @@ jobs:
         with:
           is-high-risk-environment: false
           skip-allow-scripts: true
-
-      - name: Download artifact 'build-dist-browserify'
-        uses: actions/download-artifact@v4
-        with:
-          name: build-dist-browserify
 
       - run: ./.github/scripts/create-lavamoat-viz.sh
 
