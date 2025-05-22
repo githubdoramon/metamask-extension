@@ -369,7 +369,7 @@ describe('useNonContractAddressAlerts', () => {
     });
   });
 
-  it('returns no alerts if readAddressAsContract fails (contractCode is null)', async () => {
+  it.only('returns no alerts if readAddressAsContract fails (contractCode is null)', async () => {
     const transactionWithData = {
       ...TRANSACTION_META_MOCK,
       txParams: {
@@ -415,6 +415,8 @@ describe('useNonContractAddressAlerts', () => {
         currentConfirmation: transactionWithData,
       },
     );
+
+    console.log('result', result.current);
 
     await waitFor(() => {
       expect(result.current).toEqual([]);

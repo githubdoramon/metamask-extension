@@ -245,7 +245,8 @@ export default function RemoteModeSetupDailyAllowance() {
         });
 
         // TODO: check better way to route to remote mode if upgrade is needed
-      navigate(REMOTE_ROUTE, { replace: true });
+        navigate(REMOTE_ROUTE, { replace: true });
+      }
     } catch (error) {
       // TODO: show error on UI
       console.error(error);

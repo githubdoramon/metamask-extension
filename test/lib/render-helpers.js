@@ -1,19 +1,18 @@
-import React, { useMemo, useState } from 'react';
-import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { userEvent } from '@testing-library/user-event';
-import { Router } from 'react-router-dom';
-import { CompatRouter } from 'react-router-dom-v5-compat';
-import PropTypes from 'prop-types';
 import { createMemoryHistory } from 'history';
-import configureStore from '../../ui/store/store';
+import PropTypes from 'prop-types';
+import React, { useMemo, useState } from 'react';
+import { Provider } from 'react-redux';
+import { Router, CompatRouter } from 'react-router-dom-v5-compat';
+import * as en from '../../app/_locales/en/messages.json';
+import { setupInitialStore } from '../../ui';
 import { I18nContext, LegacyI18nProvider } from '../../ui/contexts/i18n';
 import { LegacyMetaMetricsProvider } from '../../ui/contexts/metametrics';
 import { getMessage } from '../../ui/helpers/utils/i18n-helper';
-import * as en from '../../app/_locales/en/messages.json';
-import { setupInitialStore } from '../../ui';
 import Root from '../../ui/pages';
+import configureStore from '../../ui/store/store';
 
 export const I18nProvider = (props) => {
   const { currentLocale, current, en: eng } = props;
@@ -68,6 +67,12 @@ const createProviderWrapper = (store, pathname = '/') => {
       </Router>
     );
 
+  // const bips = render(Wrapper({ children: <div>a</div> }));
+  // render(<div>a</div>);
+  // console.log('bips', bips);
+
+  // screen.debug();
+
   Wrapper.propTypes = {
     children: PropTypes.node,
   };
@@ -84,6 +89,9 @@ export function renderWithProvider(
   renderer = render,
 ) {
   const { history, Wrapper } = createProviderWrapper(store, pathname);
+
+  // screen.debug(Wrapper({ children: null }));
+
   return {
     ...renderer(component, { wrapper: Wrapper }),
     history,
@@ -98,13 +106,16 @@ export function renderHookWithProvider(hook, state, pathname = '/', Container) {
     pathname,
   );
 
-  const wrapper = Container
+  const wrapper = 0
     ? ({ children }) => (
         <ProviderWrapper>
           <Container>{children}</Container>
         </ProviderWrapper>
       )
     : ProviderWrapper;
+
+  render(ProviderWrapper({ children: null }));
+  screen.debug();
 
   return {
     ...renderHook(hook, { wrapper }),
