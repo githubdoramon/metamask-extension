@@ -53,13 +53,11 @@ jest.mock(
   }),
 );
 
-jest.mock('react-router-dom', () => {
-  const original = jest.requireActual('react-router-dom');
+const mockUseNavigate = jest.fn();
+jest.mock('react-router-dom-v5-compat', () => {
   return {
-    ...original,
-    useHistory: () => ({
-      replace: jest.fn(),
-    }),
+    ...jest.requireActual('react-router-dom-v5-compat'),
+    useNavigate: () => mockUseNavigate,
   };
 });
 
@@ -194,17 +192,9 @@ describe('Confirmation Transaction Page', () => {
     });
 
     describe('when unapproved transactions exist or a sendTo recipient exists', () => {
-      it('should not call history.replace(mostRecentOverviewPage)', () => {
-        const mockStore = configureMockStore(middleware)(mockState);
-        const replaceSpy = jest.fn();
-        jest.spyOn(ReactRouterDOM, 'useHistory').mockImplementation(() => {
-          return {
-            replace: replaceSpy,
-          };
-        });
-
+      it('should not call navigate(mostRecentOverviewPage)', () => {
         renderWithProvider(<ConfirmTransaction />, mockStore);
-        expect(replaceSpy).not.toHaveBeenCalled();
+        expect(mockUseNavigate).not.toHaveBeenCalled();
       });
     });
   });

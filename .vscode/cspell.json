@@ -1,5 +1,8 @@
 {
-  "ignorePaths": ["app/images", "package.json"],
+  "ignorePaths": [
+    "app/images",
+    "package.json"
+  ],
   "ignoreWords": [
     "acitores",
     "autofetch",
@@ -64,6 +67,7 @@
     "lavadome",
     "lavamoat",
     "lavapack",
+    "Linea",
     "lockdown",
     "metamaskbot",
     "metamaskrc",
@@ -88,6 +92,7 @@
     "sourcemaps",
     "Sourcify",
     "sprintf",
+    "stablecoins",
     "testcase",
     "TESTFILES",
     "testid",
