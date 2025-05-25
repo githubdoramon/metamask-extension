@@ -125,7 +125,7 @@ export default function RemoteModeIntroducing() {
   };
 
   const onCancel = () => {
-    history.push(DEFAULT_ROUTE);
+    navigate(DEFAULT_ROUTE);
   };
 
   return (

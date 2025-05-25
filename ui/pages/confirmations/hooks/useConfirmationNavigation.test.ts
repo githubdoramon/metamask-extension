@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom-v5-compat';
 import { ApprovalType } from '@metamask/controller-utils';
 import { Json } from '@metamask/utils';
 import { ApprovalFlowState } from '@metamask/approval-controller';

@@ -4,8 +4,10 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { createSwapsMockStore } from '../../../../test/jest';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import {
+  renderWithProvider,
+  createSwapsMockStore,
+} from '../../../../test/jest';
 import { getNetworkConfigurationByNetworkClientId } from '../../../store/actions';
 import { getSwap1559GasFeeEstimates } from '../swaps.util';
 import ReviewQuote from './review-quote';

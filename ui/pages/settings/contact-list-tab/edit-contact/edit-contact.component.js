@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect, useNavigate } from 'react-router-dom-v5-compat';
+import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom-v5-compat';
 import Button from '../../../../components/ui/button/button.component';
 import TextField from '../../../../components/ui/text-field';
 import PageContainerFooter from '../../../../components/ui/page-container/page-container-footer';
@@ -227,7 +228,7 @@ const EditContact = ({
                 newMemo || memo,
                 selectedChainId,
               );
-              history.push(listRoute);
+              navigate(listRoute);
             } else {
               setAddressError(t('invalidAddress'));
             }
@@ -239,7 +240,7 @@ const EditContact = ({
               newMemo || memo,
               selectedChainId,
             );
-            history.push(listRoute);
+            navigate(listRoute);
           } else {
             await addToAddressBook(
               address,
@@ -247,7 +248,7 @@ const EditContact = ({
               newMemo || memo,
               selectedChainId,
             );
-            history.push(listRoute);
+            navigate(listRoute);
           }
         }}
         onCancel={() => navigate(`${viewRoute}/${address}`)}

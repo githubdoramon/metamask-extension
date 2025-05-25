@@ -1,18 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
-import { userEvent } from '@testing-library/user-event';
-import { createMemoryHistory } from 'history';
-import PropTypes from 'prop-types';
 import React, { useMemo, useState } from 'react';
 import { Provider } from 'react-redux';
-import { Router, CompatRouter } from 'react-router-dom-v5-compat';
-import * as en from '../../app/_locales/en/messages.json';
-import { setupInitialStore } from '../../ui';
+import { render } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
+import { userEvent } from '@testing-library/user-event';
+import { Router } from 'react-router-dom';
+import { CompatRouter } from 'react-router-dom-v5-compat';
+import PropTypes from 'prop-types';
+import { createMemoryHistory } from 'history';
+import configureStore from '../../ui/store/store';
 import { I18nContext, LegacyI18nProvider } from '../../ui/contexts/i18n';
 import { LegacyMetaMetricsProvider } from '../../ui/contexts/metametrics';
 import { getMessage } from '../../ui/helpers/utils/i18n-helper';
+import * as en from '../../app/_locales/en/messages.json';
+import { setupInitialStore } from '../../ui';
 import Root from '../../ui/pages';
-import configureStore from '../../ui/store/store';
 
 export const I18nProvider = (props) => {
   const { currentLocale, current, en: eng } = props;
@@ -60,9 +61,11 @@ const createProviderWrapper = (store, pathname = '/') => {
     ) : (
       <Router history={history}>
         <CompatRouter>
-          <LegacyI18nProvider>
-            <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
-          </LegacyI18nProvider>
+          <I18nProvider currentLocale="en" current={en} en={en}>
+            <LegacyI18nProvider>
+              <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+            </LegacyI18nProvider>
+          </I18nProvider>
         </CompatRouter>
       </Router>
     );
@@ -106,7 +109,7 @@ export function renderHookWithProvider(hook, state, pathname = '/', Container) {
     pathname,
   );
 
-  const wrapper = 0
+  const wrapper = Container
     ? ({ children }) => (
         <ProviderWrapper>
           <Container>{children}</Container>
@@ -114,8 +117,8 @@ export function renderHookWithProvider(hook, state, pathname = '/', Container) {
       )
     : ProviderWrapper;
 
-  render(ProviderWrapper({ children: null }));
-  screen.debug();
+  // render(ProviderWrapper({ children: null }));
+  // screen.debug();
 
   return {
     ...renderHook(hook, { wrapper }),

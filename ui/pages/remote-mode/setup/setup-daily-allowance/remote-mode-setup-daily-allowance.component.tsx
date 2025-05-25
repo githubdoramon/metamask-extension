@@ -1,7 +1,7 @@
 import { InternalAccount } from '@metamask/keyring-internal-api';
 import React, { useEffect, useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom-v5-compat';
+import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import { Hex } from '@metamask/utils';
 import { AssetType } from '@metamask/bridge-controller';

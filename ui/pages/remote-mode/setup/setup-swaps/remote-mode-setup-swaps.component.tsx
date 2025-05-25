@@ -1,7 +1,7 @@
 import { InternalAccount } from '@metamask/keyring-internal-api';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom-v5-compat';
+import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import { Hex } from '@metamask/utils';
 import {
@@ -235,7 +235,7 @@ export default function RemoteModeSetupSwaps() {
           mode: REMOTE_MODES.SWAP,
           meta: JSON.stringify({ allowances: swapAllowance }),
         });
-        history.replace(REMOTE_ROUTE);
+        navigate(REMOTE_ROUTE);
       }
     } catch (error) {
       // TODO: show error on UI

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 describe('new', () => {
-  it.only('bips', () => {
+  it('bips', () => {
     render(<Container />);
     screen.debug();
   });

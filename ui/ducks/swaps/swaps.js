@@ -544,7 +544,6 @@ export const navigateBackToPrepareSwap2 = (navigate) => {
   };
 };
 
-
 export const prepareForRetryGetQuotes = () => {
   return async (dispatch) => {
     // TODO: Ensure any fetch in progress is cancelled
