@@ -158,7 +158,7 @@ export default function Swap() {
     if (!isSwapsChain) {
       leaveSwaps();
     }
-  }, [isSwapsChain, dispatch, history]);
+  }, [isSwapsChain, dispatch, navigate]);
 
   // This will pre-load gas fees before going to the View Quote page.
   useGasFeeEstimates();
@@ -271,7 +271,7 @@ export default function Swap() {
     if (swapsErrorKey && !isSwapsErrorRoute && reviewSwapClicked) {
       navigate(SWAPS_ERROR_ROUTE);
     }
-  }, [history, swapsErrorKey, isSwapsErrorRoute, reviewSwapClicked]);
+  }, [navigate, swapsErrorKey, isSwapsErrorRoute, reviewSwapClicked]);
 
   const beforeUnloadEventAddedRef = useRef();
   useEffect(() => {
@@ -438,9 +438,7 @@ export default function Swap() {
                     />
                   );
                 }
-                return (
-                  <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />
-                );
+                return <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />;
               }}
             />
             <Route
@@ -448,9 +446,7 @@ export default function Swap() {
               exact
               render={() => {
                 if (!swapsErrorKey) {
-                  return (
-                    <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />
-                  );
+                  return <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />;
                 }
                 return <NotificationPage notificationKey={swapsErrorKey} />;
               }}
