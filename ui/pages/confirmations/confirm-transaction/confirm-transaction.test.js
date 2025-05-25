@@ -2,7 +2,7 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import ReactRouterDOM from 'react-router-dom';
+import ReactRouterDOM from 'react-router-dom-v5-compat';
 
 import * as ConfirmTransactionDucks from '../../../ducks/confirm-transaction/confirm-transaction.duck';
 import * as Actions from '../../../store/actions';

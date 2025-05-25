@@ -27,8 +27,8 @@ jest.mock('react-redux', () => ({
 
 const messageIdMock = '12345';
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+jest.mock('react-router-dom-v5-compat', () => ({
+  ...jest.requireActual('react-router-dom-v5-compat'),
   useParams: () => ({
     id: messageIdMock,
   }),
@@ -369,7 +369,7 @@ describe('useNonContractAddressAlerts', () => {
     });
   });
 
-  it.only('returns no alerts if readAddressAsContract fails (contractCode is null)', async () => {
+  it('returns no alerts if readAddressAsContract fails (contractCode is null)', async () => {
     const transactionWithData = {
       ...TRANSACTION_META_MOCK,
       txParams: {
@@ -415,8 +415,6 @@ describe('useNonContractAddressAlerts', () => {
         currentConfirmation: transactionWithData,
       },
     );
-
-    console.log('result', result.current);
 
     await waitFor(() => {
       expect(result.current).toEqual([]);
