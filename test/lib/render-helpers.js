@@ -70,19 +70,10 @@ const createProviderWrapper = (store, pathname = '/') => {
       </Router>
     );
 
-  // const bips = render(Wrapper({ children: <div>a</div> }));
-  // render(<div>a</div>);
-  // console.log('bips', bips);
-
-  // screen.debug();
-
   Wrapper.propTypes = {
     children: PropTypes.node,
   };
-  return {
-    Wrapper,
-    history,
-  };
+  return Wrapper;
 };
 
 export function renderWithProvider(
@@ -91,23 +82,15 @@ export function renderWithProvider(
   pathname = '/',
   renderer = render,
 ) {
-  const { history, Wrapper } = createProviderWrapper(store, pathname);
+  const Wrapper = createProviderWrapper(store, pathname);
 
-  // screen.debug(Wrapper({ children: null }));
-
-  return {
-    ...renderer(component, { wrapper: Wrapper }),
-    history,
-  };
+  return renderer(component, { wrapper: Wrapper });
 }
 
 export function renderHookWithProvider(hook, state, pathname = '/', Container) {
   const store = state ? configureStore(state) : undefined;
 
-  const { history, Wrapper: ProviderWrapper } = createProviderWrapper(
-    store,
-    pathname,
-  );
+  const ProviderWrapper = createProviderWrapper(store, pathname);
 
   const wrapper = Container
     ? ({ children }) => (
@@ -120,10 +103,7 @@ export function renderHookWithProvider(hook, state, pathname = '/', Container) {
   // render(ProviderWrapper({ children: null }));
   // screen.debug();
 
-  return {
-    ...renderHook(hook, { wrapper }),
-    history,
-  };
+  return renderHook(hook, { wrapper });
 }
 
 /**
