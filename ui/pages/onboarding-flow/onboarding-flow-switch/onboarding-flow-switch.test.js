@@ -1,5 +1,6 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
+import { waitFor } from '@testing-library/react';
 import {
   DEFAULT_ROUTE,
   ONBOARDING_COMPLETION_ROUTE,
@@ -9,7 +10,6 @@ import {
 } from '../../../helpers/constants/routes';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import OnboardingFlowSwitch from './onboarding-flow-switch';
-import { waitFor } from '@testing-library/react';
 
 const mockUseNavigate = jest.fn();
 jest.mock('react-router-dom-v5-compat', () => {

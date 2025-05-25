@@ -28,11 +28,6 @@ jest.mock('react-redux', () => ({
   useDispatch: () => mockDispatch,
 }));
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useHistory: jest.fn(() => []),
-}));
-
 describe('Creation Successful Onboarding View', () => {
   const arrangeMocks = (
     stateOverrides = {
@@ -62,12 +57,6 @@ describe('Creation Successful Onboarding View', () => {
 
     toggleExternalServices.mockClear();
     setCompletedOnboarding.mockClear();
-
-    const pushMock = jest.fn();
-    jest
-      .spyOn(reactRouterDom, 'useHistory')
-      .mockImplementation()
-      .mockReturnValue({ push: pushMock });
 
     return store;
   };

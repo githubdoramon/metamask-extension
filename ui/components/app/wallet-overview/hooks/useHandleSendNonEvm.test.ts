@@ -1,4 +1,5 @@
 import { SolScope } from '@metamask/keyring-api';
+import { waitFor } from '@testing-library/react';
 import { renderHookWithProvider } from '../../../../../test/lib/render-helpers';
 import {
   sendMultichainTransaction,
@@ -8,7 +9,6 @@ import { SOLANA_WALLET_SNAP_ID } from '../../../../../shared/lib/accounts/solana
 import { CONFIRMATION_V_NEXT_ROUTE } from '../../../../helpers/constants/routes';
 import { mockMultichainNetworkState } from '../../../../../test/stub/networks';
 import { useHandleSendNonEvm } from './useHandleSendNonEvm';
-import { waitFor } from '@testing-library/react';
 
 jest.mock('../../../../store/actions', () => ({
   sendMultichainTransaction: jest.fn(),
