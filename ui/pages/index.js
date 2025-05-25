@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import { CompatRouter } from 'react-router-dom-v5-compat';
 import * as Sentry from '@sentry/browser';
-import { I18nProvider, LegacyI18nProvider } from '../contexts/i18n';
+import { I18nProvider } from '../contexts/i18n';
 import {
   MetaMetricsProvider,
   LegacyMetaMetricsProvider,
@@ -35,9 +35,7 @@ class Index extends PureComponent {
       return (
         <Provider store={store}>
           <I18nProvider>
-            <LegacyI18nProvider>
-              <ErrorPage error={error} />
-            </LegacyI18nProvider>
+            <ErrorPage error={error} />
           </I18nProvider>
         </Provider>
       );
@@ -50,15 +48,13 @@ class Index extends PureComponent {
             <MetaMetricsProvider>
               <LegacyMetaMetricsProvider>
                 <I18nProvider>
-                  <LegacyI18nProvider>
-                    <AssetPollingProvider>
-                      <MetamaskIdentityProvider>
-                        <MetamaskNotificationsProvider>
-                          <Routes />
-                        </MetamaskNotificationsProvider>
-                      </MetamaskIdentityProvider>
-                    </AssetPollingProvider>
-                  </LegacyI18nProvider>
+                  <AssetPollingProvider>
+                    <MetamaskIdentityProvider>
+                      <MetamaskNotificationsProvider>
+                        <Routes />
+                      </MetamaskNotificationsProvider>
+                    </MetamaskIdentityProvider>
+                  </AssetPollingProvider>
                 </I18nProvider>
               </LegacyMetaMetricsProvider>
             </MetaMetricsProvider>
