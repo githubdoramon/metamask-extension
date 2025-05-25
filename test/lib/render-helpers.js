@@ -82,9 +82,9 @@ export function renderWithProvider(
   pathname = '/',
   renderer = render,
 ) {
-  const Wrapper = createProviderWrapper(store, pathname);
+  const wrapper = createProviderWrapper(store, pathname);
 
-  return renderer(component, { wrapper: Wrapper });
+  return renderer(component, { wrapper });
 }
 
 export function renderHookWithProvider(hook, state, pathname = '/', Container) {
