@@ -7,7 +7,7 @@ import { Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createMemoryHistory } from 'history';
 import configureStore from '../../ui/store/store';
-import { I18nContext } from '../../ui/contexts/i18n';
+import { I18nContext, LegacyI18nProvider } from '../../ui/contexts/i18n';
 import { LegacyMetaMetricsProvider } from '../../ui/contexts/metametrics';
 import { getMessage } from '../../ui/helpers/utils/i18n-helper';
 import * as en from '../../app/_locales/en/messages.json';
@@ -46,13 +46,19 @@ const createProviderWrapper = (store, pathname = '/') => {
       <Provider store={store}>
         <Router history={history}>
           <I18nProvider currentLocale="en" current={en} en={en}>
-            <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+            <LegacyI18nProvider>
+              <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+            </LegacyI18nProvider>
           </I18nProvider>
         </Router>
       </Provider>
     ) : (
       <Router history={history}>
-        <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+        <I18nProvider currentLocale="en" current={en} en={en}>
+          <LegacyI18nProvider>
+            <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+          </LegacyI18nProvider>
+        </I18nProvider>
       </Router>
     );
 
@@ -124,7 +130,7 @@ export const renderHookWithProviderTyped = (
 export function renderWithLocalization(component) {
   const Wrapper = ({ children }) => (
     <I18nProvider currentLocale="en" current={en} en={en}>
-      {children}
+      <LegacyI18nProvider>{children}</LegacyI18nProvider>
     </I18nProvider>
   );
 

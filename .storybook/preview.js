@@ -10,7 +10,7 @@ import configureStore from '../ui/store/store';
 import '../ui/css/index.scss';
 import localeList from '../app/_locales/index.json';
 import * as allLocales from './locales';
-import { I18nProvider } from './i18n';
+import { I18nProvider, LegacyI18nProvider } from './i18n';
 import MetaMetricsProviderStorybook from './metametrics';
 import testData from './test-data.js';
 import { Router } from 'react-router-dom';
@@ -163,7 +163,7 @@ const metamaskDecorator = (story, context) => {
               current={current}
               en={allLocales.en}
             >
-              {story()}
+              <LegacyI18nProvider>{story()}</LegacyI18nProvider>
             </I18nProvider>
           </AlertMetricsProvider>
         </MetaMetricsProviderStorybook>

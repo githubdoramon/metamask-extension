@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { I18nContext } from '../../ui/contexts/i18n';
+import { I18nContext, LegacyI18nProvider } from '../../ui/contexts/i18n';
 import { getMessage } from '../../ui/helpers/utils/i18n-helper';
 import * as en from '../../app/_locales/en/messages.json';
 import { LegacyMetaMetricsProvider } from '../../ui/contexts/metametrics';
@@ -39,7 +39,9 @@ export function renderWithProvider(component, store, initialEntries) {
     const WithoutStore = () => (
       <MemoryRouter initialEntries={initialEntries || ['/']} initialIndex={0}>
         <I18nProvider currentLocale="en" current={en} en={en}>
-          <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+          <LegacyI18nProvider>
+            <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
+          </LegacyI18nProvider>
         </I18nProvider>
       </MemoryRouter>
     );
