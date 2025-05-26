@@ -32,7 +32,7 @@ describe('SelectedToken', () => {
       <SelectedToken {...props} />,
     );
     expect(container).toMatchSnapshot();
-    expect(getByText('[swapSelectAToken]')).toBeInTheDocument();
+    expect(getByText('Select token')).toBeInTheDocument();
   });
 
   it('renders the component and opens the list', () => {
