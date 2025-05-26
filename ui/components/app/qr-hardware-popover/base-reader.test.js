@@ -46,13 +46,9 @@ describe('Base Reader', () => {
       Promise.resolve({ permissions: true, environmentReady: true }),
     );
     renderWithProvider(<BaseReader {...mockBaseReaderData} />);
-    await screen.findByText(
-      'Place the QR code in front of your camera. The screen is blurred, but it will not affect the reading.',
-      undefined,
-      {
-        timeout: 5000,
-      },
-    );
+    await screen.findByText('[QRHardwareScanInstructions]', undefined, {
+      timeout: 5000,
+    });
     expect(screen.queryByTestId('qr-reader-progress-bar')).toBeNull();
   });
 });

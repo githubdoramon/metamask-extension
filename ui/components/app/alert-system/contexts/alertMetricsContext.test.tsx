@@ -1,8 +1,8 @@
 // TODO: Howard
 import React from 'react';
+import { screen } from '@testing-library/react';
 import { renderHookWithProvider } from '../../../../../test/lib/render-helpers';
 import { AlertMetricsProvider, useAlertMetrics } from './alertMetricsContext';
-import { screen } from '@testing-library/react';
 
 // jest.mock('react', () => ({
 //   ...jest.requireActual('react'),
@@ -31,7 +31,6 @@ describe('useAlertMetrics', () => {
     console.log('result', result.current);
 
     // screen.debug();
-    return;
 
     // expect(result.current).toBeDefined();
     // expect(typeof result.current.trackAlertActionClicked).toBe('function');

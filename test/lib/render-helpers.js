@@ -47,11 +47,7 @@ const createProviderWrapper = (store, pathname = '/') => {
         <MemoryRouter initialEntries={[pathname]}>
           <CompatRouter>
             <I18nProvider currentLocale="en" current={en} en={en}>
-              <LegacyI18nProvider>
-                <LegacyMetaMetricsProvider>
-                  {children}
-                </LegacyMetaMetricsProvider>
-              </LegacyI18nProvider>
+              <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
             </I18nProvider>
           </CompatRouter>
         </MemoryRouter>
@@ -59,9 +55,9 @@ const createProviderWrapper = (store, pathname = '/') => {
     ) : (
       <MemoryRouter initialEntries={[pathname]}>
         <CompatRouter>
-          <LegacyI18nProvider>
+          <I18nProvider currentLocale="en" current={en} en={en}>
             <LegacyMetaMetricsProvider>{children}</LegacyMetaMetricsProvider>
-          </LegacyI18nProvider>
+          </I18nProvider>
         </CompatRouter>
       </MemoryRouter>
     );

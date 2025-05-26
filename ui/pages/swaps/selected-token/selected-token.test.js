@@ -6,6 +6,7 @@ import SelectedToken from './selected-token';
 const createProps = (customProps = {}) => {
   return {
     onClick: jest.fn(),
+    onClose: jest.fn(),
     selectedToken: {
       iconUrl: 'iconUrl',
       symbol: 'ETH',
@@ -31,7 +32,7 @@ describe('SelectedToken', () => {
       <SelectedToken {...props} />,
     );
     expect(container).toMatchSnapshot();
-    expect(getByText('Select token')).toBeInTheDocument();
+    expect(getByText('[swapSelectAToken]')).toBeInTheDocument();
   });
 
   it('renders the component and opens the list', () => {

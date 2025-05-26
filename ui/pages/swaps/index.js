@@ -438,7 +438,9 @@ export default function Swap() {
                     />
                   );
                 }
-                return <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />;
+                return (
+                  <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />
+                );
               }}
             />
             <Route
@@ -446,7 +448,9 @@ export default function Swap() {
               exact
               render={() => {
                 if (!swapsErrorKey) {
-                  return <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />;
+                  return (
+                    <Navigate to={{ pathname: PREPARE_SWAP_ROUTE }} replace />
+                  );
                 }
                 return <NotificationPage notificationKey={swapsErrorKey} />;
               }}
