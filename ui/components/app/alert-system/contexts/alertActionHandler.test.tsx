@@ -1,10 +1,10 @@
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import {
   AlertActionHandlerProvider,
   useAlertActionHandler,
 } from './alertActionHandler';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 describe('AlertActionHandlerContext', () => {
   it('throws if hook is used outside the provider', () => {
@@ -23,9 +23,7 @@ describe('AlertActionHandlerContext', () => {
 
     const TestComponent = () => {
       const { processAction } = useAlertActionHandler();
-      return (
-        <button onClick={() => processAction('KEY')}>Trigger</button>
-      );
+      return <button onClick={() => processAction('KEY')}>Trigger</button>;
     };
 
     render(

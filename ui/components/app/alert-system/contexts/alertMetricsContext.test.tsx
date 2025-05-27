@@ -1,5 +1,5 @@
-import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
+import React from 'react';
 import { AlertMetricsProvider, useAlertMetrics } from './alertMetricsContext';
 
 const mockTrackAlertActionClicked = jest.fn();
