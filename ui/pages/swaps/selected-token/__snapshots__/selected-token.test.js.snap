@@ -67,7 +67,7 @@ exports[`SelectedToken renders the component with no token selected 1`] = `
             <span
               class="selected-token-list__closed-primary-label selected-token-list__select-default"
             >
-              [swapSelectAToken]
+              Select token
             </span>
           </div>
         </div>

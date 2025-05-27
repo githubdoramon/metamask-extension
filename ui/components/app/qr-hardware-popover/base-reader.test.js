@@ -46,7 +46,7 @@ describe('Base Reader', () => {
       Promise.resolve({ permissions: true, environmentReady: true }),
     );
     renderWithProvider(<BaseReader {...mockBaseReaderData} />);
-    await screen.find(
+    await screen.findByText(
       'Place the QR code in front of your camera. The screen is blurred, but it will not affect the reading.',
       undefined,
       {
