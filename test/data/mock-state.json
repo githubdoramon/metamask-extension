@@ -70,6 +70,7 @@
     "participateInMetaMetrics": false,
     "gasEstimateType": "fee-market",
     "showBetaHeader": false,
+    "upgradeSplashPageAcknowledgedForAccounts": [],
     "gasFeeEstimatesByChainId": {
       "0x5": {
         "gasEstimateType": "fee-market",
@@ -926,6 +927,7 @@
     "useNftDetection": true,
     "openSeaEnabled": true,
     "orderedNetworkList": [],
+    "enabledNetworkMap": {},
     "pinnedAccountList": [],
     "hiddenAccountList": [],
     "advancedGasFee": {
