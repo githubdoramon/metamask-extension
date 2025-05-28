@@ -12,15 +12,6 @@ import {
   generateERC20TransferData,
   generateERC721TransferData,
 } from '../../pages/confirmations/send/send.utils';
-import { getCurrentChainId } from '../../../shared/modules/selectors/networks';
-import {
-  checkNetworkAndAccountSupports1559,
-  getConfirmationExchangeRates,
-  getTokenExchangeRates,
-} from '../../selectors';
-import { getGasFeeEstimates, getNativeCurrency } from '../metamask/metamask';
-import { getUsedSwapsGasPrice } from '../swaps/swaps';
-import { fetchTokenExchangeRates } from '../../helpers/utils/util';
 import { generateTransactionParams } from './helpers';
 
 jest.mock('human-standard-token-abi', () => ({}));
