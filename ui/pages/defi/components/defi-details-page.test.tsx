@@ -2,7 +2,7 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { renderWithProvider } from '../../../../test/jest/rendering';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import mockState from '../../../../test/data/mock-state.json';
 import DeFiPage from './defi-details-page';
 
@@ -76,15 +76,6 @@ describe('DeFiDetailsPage', () => {
   };
 
   const store = configureMockStore([thunk])(mockStore);
-
-  beforeAll(() => {
-    jest.clearAllMocks();
-  });
-
-  afterEach(() => {
-    store.clearActions();
-    jest.restoreAllMocks();
-  });
 
   it('renders defi asset page', () => {
     const { container } = renderWithProvider(<DeFiPage />, store);
