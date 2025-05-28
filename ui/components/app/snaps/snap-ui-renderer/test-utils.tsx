@@ -1,6 +1,6 @@
 import React from 'react';
-import { DeepPartial, Reducer } from 'redux';
 import { RenderResult } from '@testing-library/react';
+import { DeepPartial, Reducer } from 'redux';
 import type { SnapId } from '@metamask/snaps-sdk';
 import { JSXElement } from '@metamask/snaps-sdk/jsx';
 import configureStore, { MetaMaskReduxState } from '../../../../store/store';
@@ -21,7 +21,7 @@ type RenderInterfaceOptions = {
 };
 
 // Combine the renderWithProvider result with our custom properties
-type RenderInterfaceResult = {
+type RenderInterfaceResult = RenderResult & {
   updateInterface: (
     newContent: JSXElement,
     newState?: Record<string, unknown> | null,

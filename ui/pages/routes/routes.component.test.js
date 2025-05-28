@@ -1,6 +1,6 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import thunk from 'redux-thunk';
 import { BtcAccountType, SolAccountType } from '@metamask/keyring-api';
 import { SEND_STAGES } from '../../ducks/send';
