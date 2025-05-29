@@ -2,7 +2,7 @@ import { getNativeTokenAddress } from '@metamask/assets-controllers';
 import { EthMethod, SolMethod } from '@metamask/keyring-api';
 import { CaipAssetType, Hex, parseCaipAssetType } from '@metamask/utils';
 import { isEqual } from 'lodash';
-import React, { ReactNode, useEffect, useMemo } from 'react';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { AssetType } from '../../../../shared/constants/transaction';
@@ -200,11 +200,14 @@ const AssetPage = ({
     : 0;
 
   // this is needed in order to assign the correct balances to TokenButtons before navigating to send/swap screens
-  asset.balance = {
-    value: hexToDecimal(tokenHexBalance),
-    display: String(balance),
-    fiat: String(tokenFiatAmount),
-  };
+  const [updatedAsset, _] = useState({
+    ...asset,
+    balance: {
+      value: hexToDecimal(tokenHexBalance),
+      display: String(balance),
+      fiat: String(tokenFiatAmount),
+    },
+  });
 
   const shouldShowSpendingCaps = isEvm;
   const portfolioSpendingCapsUrl = useMemo(
@@ -307,7 +310,7 @@ const AssetPage = ({
             }}
           />
         ) : (
-          <TokenButtons token={asset} />
+          <TokenButtons token={updatedAsset} />
         )}
       </Box>
       <Box
@@ -428,7 +431,7 @@ const AssetPage = ({
               </Box>
             </Box>
           )}
-          <AssetMarketDetails asset={asset} address={address} />
+          <AssetMarketDetails asset={updatedAsset} address={address} />
           <Box
             borderColor={BorderColor.borderMuted}
             marginInline={4}
