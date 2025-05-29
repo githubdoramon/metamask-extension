@@ -12,6 +12,9 @@ on:
         required: true
       DOCKER_HUB_TOKEN:
         required: true
+  pull_request:
+    branches:
+      - main
 
 jobs:
   # test-e2e-chrome-browserify:
@@ -190,7 +193,7 @@ jobs:
 
   test-e2e-chrome-stx:
     uses: ./.github/workflows/run-e2e.yml
-    if: ${{ github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request' }}
     with:
       test-suite-name: test-e2e-chrome-browserify-stx
       build-artifact: prep-build-test-browserify-chrome
