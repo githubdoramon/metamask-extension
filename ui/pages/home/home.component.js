@@ -224,11 +224,11 @@ export default class Home extends PureComponent {
 
     const canRedirect = !isNotification && !stayOnHomePage;
     if (canRedirect && showAwaitingSwapScreen) {
-      return <Navigate to={AWAITING_SWAP_ROUTE} />;
+      navigate(AWAITING_SWAP_ROUTE);
     } else if (canRedirect && (haveSwapsQuotes || swapsFetchParams)) {
-      return <Navigate to={PREPARE_SWAP_ROUTE} />;
+      navigate(PREPARE_SWAP_ROUTE);
     } else if (canRedirect && haveBridgeQuotes) {
-      return <Navigate to={CROSS_CHAIN_SWAP_ROUTE + PREPARE_SWAP_ROUTE} />;
+      navigate(CROSS_CHAIN_SWAP_ROUTE + PREPARE_SWAP_ROUTE);
     } else if (pendingApprovals.length || hasApprovalFlows) {
       navigateToConfirmation(
         pendingApprovals?.[0]?.id,
@@ -793,10 +793,7 @@ export default class Home extends PureComponent {
       showMultiRpcModal,
     } = this.props;
 
-    const navigationCommand = this.checkStatusAndNavigate();
-    if (navigationCommand) {
-      return navigationCommand;
-    }
+    this.checkStatusAndNavigate();
 
     if (forgottenPassword) {
       return <Redirect to={{ pathname: RESTORE_VAULT_ROUTE }} />;
