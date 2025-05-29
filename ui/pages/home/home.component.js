@@ -96,7 +96,7 @@ export default class Home extends PureComponent {
   };
 
   static propTypes = {
-    navigate: PropTypes.object,
+    navigate: PropTypes.func,
     forgottenPassword: PropTypes.bool,
     setConnectedStatusPopoverHasBeenShown: PropTypes.func,
     shouldShowSeedPhraseReminder: PropTypes.bool.isRequired,
@@ -224,11 +224,11 @@ export default class Home extends PureComponent {
 
     const canRedirect = !isNotification && !stayOnHomePage;
     if (canRedirect && showAwaitingSwapScreen) {
-      navigate(AWAITING_SWAP_ROUTE);
+      return <Navigate to={AWAITING_SWAP_ROUTE} />;
     } else if (canRedirect && (haveSwapsQuotes || swapsFetchParams)) {
-      navigate(PREPARE_SWAP_ROUTE);
+      return <Navigate to={PREPARE_SWAP_ROUTE} />;
     } else if (canRedirect && haveBridgeQuotes) {
-      navigate(CROSS_CHAIN_SWAP_ROUTE + PREPARE_SWAP_ROUTE);
+      return <Navigate to={CROSS_CHAIN_SWAP_ROUTE + PREPARE_SWAP_ROUTE} />;
     } else if (pendingApprovals.length || hasApprovalFlows) {
       navigateToConfirmation(
         pendingApprovals?.[0]?.id,
@@ -240,8 +240,6 @@ export default class Home extends PureComponent {
   }
 
   componentDidMount() {
-    this.checkStatusAndNavigate();
-
     this.props.fetchBuyableChains();
   }
 
@@ -794,6 +792,11 @@ export default class Home extends PureComponent {
       newNetworkAddedConfigurationId,
       showMultiRpcModal,
     } = this.props;
+
+    const navigationCommand = this.checkStatusAndNavigate();
+    if (navigationCommand) {
+      return navigationCommand;
+    }
 
     if (forgottenPassword) {
       return <Redirect to={{ pathname: RESTORE_VAULT_ROUTE }} />;
