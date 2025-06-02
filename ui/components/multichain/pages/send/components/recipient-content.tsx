@@ -147,9 +147,8 @@ export const SendPageRecipientContent = ({
           <AssetPickerAmount
             header={t('sendSelectReceiveAsset')}
             action="receive"
-            asset={isSwapAllowed ? receiveAsset : sendAsset}
+            asset={receiveAsset}
             sendingAsset={
-              isSwapAllowed &&
               sendAsset && {
                 image:
                   sendAsset.type === AssetType.native
@@ -164,13 +163,13 @@ export const SendPageRecipientContent = ({
                 symbol: sendAsset?.details?.symbol || nativeCurrencySymbol,
               }
             }
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             onAssetChange={useCallback(
-              (newAsset) => onAssetChange(newAsset, isSwapAllowed),
-              [onAssetChange, isSwapAllowed],
+              (newAsset) => onAssetChange(newAsset, true),
+              [onAssetChange],
             )}
             isAmountLoading={isLoadingInitialQuotes}
             amount={amount}
-            isDisabled={!isSwapAllowed}
             onClick={onClick}
             showNetworkPicker={false}
             visibleTabs={[TabName.TOKENS]}
