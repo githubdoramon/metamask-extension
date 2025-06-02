@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout and setup environment
-        uses: MetaMask/action-checkout-and-setup@feat-INFRA-2575-yarn-issues
+        uses: MetaMask/action-checkout-and-setup@alt-enable
         with:
           is-high-risk-environment: false
           cache-node-modules: true
@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout and setup environment
-        uses: MetaMask/action-checkout-and-setup@feat-INFRA-2575-yarn-issues
+        uses: MetaMask/action-checkout-and-setup@alt-enable
         with:
           is-high-risk-environment: false
           skip-allow-scripts: true
@@ -194,7 +194,7 @@ jobs:
       SELENIUM_BROWSER: chrome
     steps:
       - name: Checkout and setup environment
-        uses: MetaMask/action-checkout-and-setup@feat-INFRA-2575-yarn-issues
+        uses: MetaMask/action-checkout-and-setup@alt-enable
         with:
           is-high-risk-environment: false
           skip-allow-scripts: true
@@ -265,7 +265,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout and setup environment
-        uses: MetaMask/action-checkout-and-setup@feat-INFRA-2575-yarn-issues
+        uses: MetaMask/action-checkout-and-setup@alt-enable
         with:
           is-high-risk-environment: false
           skip-allow-scripts: true
@@ -292,7 +292,7 @@ jobs:
       INFURA_PROJECT_ID: ${{ secrets.INFURA_PROJECT_ID }}
     steps:
       - name: Checkout and setup environment
-        uses: MetaMask/action-checkout-and-setup@feat-INFRA-2575-yarn-issues
+        uses: MetaMask/action-checkout-and-setup@alt-enable
         with:
           is-high-risk-environment: false
           skip-allow-scripts: true
