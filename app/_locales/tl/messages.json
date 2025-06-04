@@ -3022,9 +3022,6 @@
     "message": "Siguraduhing walang tumitingin",
     "description": "Warning to users to be care while creating and saving their new Secret Recovery Phrase"
   },
-  "manageDefaultSettings": {
-    "message": "Pamahalaan ang mga default na setting sa pagkapribado"
-  },
   "manageInstitutionalWallets": {
     "message": "Pamahalaan ang mga Institutional Wallet"
   },
@@ -3429,9 +3426,6 @@
   "newNftAddedMessage": {
     "message": "Matagumpay na naidagdag ang NFT!"
   },
-  "newPassword": {
-    "message": "Bagong password (min na 8 char)"
-  },
   "newPrivacyPolicyActionButton": {
     "message": "Magbasa pa"
   },
@@ -3805,17 +3799,8 @@
   "onboardingAdvancedPrivacyNetworkTitle": {
     "message": "Piliin ang iyong network"
   },
-  "onboardingCreateWallet": {
-    "message": "Gumawa ng bagong wallet"
-  },
-  "onboardingImportWallet": {
-    "message": "Mag-import ng umiiral na wallet"
-  },
   "onboardingMetametricsAgree": {
     "message": "Sumasang-ayon ako"
-  },
-  "onboardingMetametricsDescription": {
-    "message": "Nais naming mangalap ng data para sa batayang paggamit upang mapahusay ang MetaMask. Dapat mong malaman na hindi namin ibebenta ang data na iyong ibibigay rito."
   },
   "onboardingMetametricsDescription2": {
     "message": "Kapag kami ay nangangalap ng metrics, ito ay palaging..."
@@ -3826,10 +3811,6 @@
   },
   "onboardingMetametricsInfuraTermsPolicy": {
     "message": "Patakaran sa Pagkapribado"
-  },
-  "onboardingMetametricsNeverCollect": {
-    "message": "$1 mga click at view sa app ay nakaimbak, ngunit ang ibang detalye (tulad ng iyong address) ay hindi.",
-    "description": "$1 represents `onboardingMetametricsNeverCollectEmphasis`"
   },
   "onboardingMetametricsNeverCollectEmphasis": {
     "message": "Pribado:"
@@ -3872,15 +3853,6 @@
   "onboardingPinExtensionChrome": {
     "message": "Mag-click sa con ng browser extension"
   },
-  "onboardingPinExtensionDescription": {
-    "message": "I-pin ang MetaMask sa iyong browser para madali itong ma-access at madaling makita ang mga kumpirmasyon ng transaksyon."
-  },
-  "onboardingPinExtensionDescription2": {
-    "message": "Maaari mong buksan ang MetaMask sa pamamagitan ng pag-click sa extension at pag-accesss sa wallet mo sa 1 click lang."
-  },
-  "onboardingPinExtensionDescription3": {
-    "message": "Mag-click sa icon ng browser extension para agad itong ma-access"
-  },
   "onboardingPinExtensionLabel": {
     "message": "I-pin ang MetaMask"
   },
@@ -3889,9 +3861,6 @@
   },
   "onboardingPinExtensionStep2": {
     "message": "2"
-  },
-  "onboardingPinExtensionTitle": {
-    "message": "Ang pag-install ng iyong MetaMask ay kumpleto na!"
   },
   "onekey": {
     "message": "OneKey"
@@ -3972,9 +3941,6 @@
   },
   "passwordStrengthDescription": {
     "message": "Mapapabuti ng matibay na password ang seguridad ng iyong wallet kung sakaling manakaw o makompromiso ang iyong device."
-  },
-  "passwordTermsWarning": {
-    "message": "Nauunawaan ko na hindi matatakpan ng MetaMask ang password na ito para sa akin. $1"
   },
   "passwordsDontMatch": {
     "message": "Hindi Magkatugma ang Mga Password"
@@ -5144,9 +5110,6 @@
   "skipAccountSecurity": {
     "message": "Laktawan ang Account Security?"
   },
-  "skipAccountSecurityDetails": {
-    "message": "Nauunawaan ko na hanggang sa i-back up ko ang aking Lihim na Parirala sa Pagbawi, maaaring mawala sa akin ang mga account ko at lahat ng asset ng mga ito."
-  },
   "slideBridgeDescription": {
     "message": "Magpalipat-lipat sa 9 na chain, lahat sa loob ng iyong wallet"
   },
@@ -6252,14 +6215,8 @@
   "termsOfService": {
     "message": "Mga Tuntunin ng Serbisyo"
   },
-  "termsOfUseAgreeText": {
-    "message": " Sumasang-ayon ako sa Mga Tuntunin sa Paggamit, na nalalapat sa aking paggamit ng MetaMask at lahat ng feature nito"
-  },
   "termsOfUseFooterText": {
     "message": "Mag-scroll upang basahin ang lahat ng seksyon"
-  },
-  "termsOfUseTitle": {
-    "message": "Na-update ang aming Mga Tuntunin sa Paggamit"
   },
   "testNetworks": {
     "message": "Suriin ang mga network"
@@ -6548,9 +6505,6 @@
   },
   "unapproved": {
     "message": "Hindi inaprubahan"
-  },
-  "unexpectedBehavior": {
-    "message": "Hindi inaasahan ang nangyaring ito at dapat itong iulat bilang bug, kahit na na-restore nang maayos ang mga account mo. Gamitin ang link sa ibaba para magpadala sa MetaMask ng ulat sa bug."
   },
   "units": {
     "message": "mga unit"
@@ -6865,9 +6819,6 @@
   },
   "yourTransactionJustConfirmed": {
     "message": "Hindi namin makansela ang iyong transaksyon bago ito nakumpirma sa blockchain."
-  },
-  "yourWalletIsReady": {
-    "message": "Handa na ang iyong wallet"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Walang presyo ng gas sa pagpapabilis"

@@ -372,6 +372,9 @@
   "alertActionUpdateGasFeeLevel": {
     "message": "Ενημέρωση επιλογών των τελών συναλλαγών"
   },
+  "alertContentMultipleApprovals": {
+    "message": "Πρόκειται να δώσετε σε κάποιον άλλον την άδεια να κάνει αναληψη στα token σας, παρόλο που αυτό δεν είναι απαραίτητο για αυτή τη συναλλαγή."
+  },
   "alertDisableTooltip": {
     "message": "Αυτό μπορεί να αλλάξει στις \"Ρυθμίσεις > Ειδοποιήσεις\""
   },
@@ -434,6 +437,9 @@
   },
   "alertReasonInsufficientBalance": {
     "message": "Ανεπαρκή κεφάλαια"
+  },
+  "alertReasonMultipleApprovals": {
+    "message": "Μη αναγκαία άδεια"
   },
   "alertReasonNetworkBusy": {
     "message": "Το δίκτυο είναι απασχολημένο"
@@ -3022,9 +3028,6 @@
     "message": "Βεβαιωθείτε ότι κανείς δεν κοιτάει",
     "description": "Warning to users to be care while creating and saving their new Secret Recovery Phrase"
   },
-  "manageDefaultSettings": {
-    "message": "Διαχείριση προεπιλεγμένων ρυθμίσεων απορρήτου"
-  },
   "manageInstitutionalWallets": {
     "message": "Διαχείριση συστημικών πορτοφολιών"
   },
@@ -3429,9 +3432,6 @@
   "newNftAddedMessage": {
     "message": "Το NFT προστέθηκε με επιτυχία!"
   },
-  "newPassword": {
-    "message": "Νέος κωδικός πρόσβασης (τουλάχιστον 8 χαρακτήρες)"
-  },
   "newPrivacyPolicyActionButton": {
     "message": "Διαβάστε περισσότερα"
   },
@@ -3805,17 +3805,8 @@
   "onboardingAdvancedPrivacyNetworkTitle": {
     "message": "Επιλέξτε το δίκτυό σας"
   },
-  "onboardingCreateWallet": {
-    "message": "Δημιουργήστε ένα νέο πορτοφόλι"
-  },
-  "onboardingImportWallet": {
-    "message": "Εισαγωγή υπάρχοντος πορτοφολιού"
-  },
   "onboardingMetametricsAgree": {
     "message": "Συμφωνώ"
-  },
-  "onboardingMetametricsDescription": {
-    "message": "Θέλουμε να συλλέξουμε βασικά δεδομένα χρήσης και διάγνωσης για να βελτιώσουμε το MetaMask. Λάβετε υπόψη ότι δεν πουλάμε ποτέ τα δεδομένα που μας παρέχετε εδώ."
   },
   "onboardingMetametricsDescription2": {
     "message": "Όταν συγκεντρώνουμε μετρήσεις, θα είναι πάντα..."
@@ -3826,10 +3817,6 @@
   },
   "onboardingMetametricsInfuraTermsPolicy": {
     "message": "Πολιτική Απορρήτου"
-  },
-  "onboardingMetametricsNeverCollect": {
-    "message": "$1 τα κλικ και οι προβολές στην εφαρμογή αποθηκεύονται, ωστόσο άλλα στοιχεία (όπως η δημόσια διεύθυνσή σας) όχι.",
-    "description": "$1 represents `onboardingMetametricsNeverCollectEmphasis`"
   },
   "onboardingMetametricsNeverCollectEmphasis": {
     "message": "Ιδιωτικές:"
@@ -3872,15 +3859,6 @@
   "onboardingPinExtensionChrome": {
     "message": "Κάντε κλικ στο εικονίδιο της επέκτασης του προγράμματος περιήγησης"
   },
-  "onboardingPinExtensionDescription": {
-    "message": "Προσκολλήστε το MetaMask στο πρόγραμμα περιήγησής σας, ώστε να είναι προσβάσιμο και εύκολο να δείτε τις επιβεβαιώσεις συναλλαγών."
-  },
-  "onboardingPinExtensionDescription2": {
-    "message": "Μπορείτε να ανοίξετε το MetaMask κάνοντας κλικ στην επέκταση και να αποκτήσετε πρόσβαση στο πορτοφόλι σας με 1 κλικ."
-  },
-  "onboardingPinExtensionDescription3": {
-    "message": "Κάντε κλικ στο εικονίδιο της επέκτασης του προγράμματος περιήγησης για άμεση πρόσβαση"
-  },
   "onboardingPinExtensionLabel": {
     "message": "Καρφίτσωμα του MetaMask"
   },
@@ -3889,9 +3867,6 @@
   },
   "onboardingPinExtensionStep2": {
     "message": "2"
-  },
-  "onboardingPinExtensionTitle": {
-    "message": "Η εγκατάσταση του MetaMask ολοκληρώθηκε!"
   },
   "onekey": {
     "message": "OneKey"
@@ -3972,9 +3947,6 @@
   },
   "passwordStrengthDescription": {
     "message": "Ένας ισχυρός κωδικός πρόσβασης μπορεί να βελτιώσει την ασφάλεια του πορτοφολιού σας εάν η συσκευή σας κλαπεί ή παραβιαστεί."
-  },
-  "passwordTermsWarning": {
-    "message": "Κατανοώ ότι το MetaMask δεν μπορεί να ανακτήσει αυτόν τον κωδικό πρόσβασης για μένα. $1"
   },
   "passwordsDontMatch": {
     "message": "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
@@ -5144,9 +5116,6 @@
   "skipAccountSecurity": {
     "message": "Παράλειψη ασφάλειας λογαριασμού;"
   },
-  "skipAccountSecurityDetails": {
-    "message": "Κατανοώ ότι μέχρι να δημιουργήσω αντίγραφα ασφαλείας της Μυστικής Φράσης Ανάκτησης, ενδέχεται να χάσω τους λογαριασμούς μου και όλα τα περιουσιακά τους στοιχεία."
-  },
   "slideBridgeDescription": {
     "message": "Μετακινηθείτε σε 9 αλυσίδες, όλες μέσα στο πορτοφόλι σας"
   },
@@ -5678,6 +5647,45 @@
   },
   "startEarning": {
     "message": "Ξεκινήστε να κερδίζετε"
+  },
+  "stateCorruptionAreYouSure": {
+    "message": "Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
+  },
+  "stateCorruptionCopyAndRestoreBeforeRecovery": {
+    "message": "Μπορείτε να δοκιμάσετε να αντιγράψετε και να επαναφέρετε το αρχείο κατάστασής σας χειροκίνητα, πριν αποφασίσετε να επαναφέρετε το εικονικό σας \"θησαυροφυλάκιο\", ακολουθώντας $1.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionCopyAndRestoreBeforeReset": {
+    "message": "Μπορείτε να δοκιμάσετε να αντιγράψετε και να επαναφέρετε το αρχείο κατάστασής σας χειροκίνητα, πριν αποφασίσετε να επαναφέρετε το MetaMask, ακολουθώντας $1.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionDetectedNoBackup": {
+    "message": "Δεν είναι δυνατή η αυτόματη επαναφορά του εικονικού σας \"θησαυροφυλακίου\"."
+  },
+  "stateCorruptionDetectedWithBackup": {
+    "message": "Δεν είναι δυνατή η επαναφορά του εικονικού σας \"θησαυροφυλακίου\" από ένα αυτόματο αντίγραφο ασφαλείας. Η αυτόματη ανάκτηση θα διαγράψει τις τρέχουσες ρυθμίσεις και προτιμήσεις σας, επαναφέροντας μόνο το εικονικό σας \"θησαυροφυλάκιο\"."
+  },
+  "stateCorruptionMetamaskDatabaseCannotBeAccessed": {
+    "message": "Εσωτερικό Σφάλμα: Δεν είναι δυνατή η πρόσβαση στη βάση δεδομένων"
+  },
+  "stateCorruptionResetMetaMaskState": {
+    "message": "Επαναφορά κατάστασης του MetaMask"
+  },
+  "stateCorruptionResettingDatabase": {
+    "message": "Γίνεται επαναφορά της βάσης δεδομένων…"
+  },
+  "stateCorruptionRestoreAccountsFromBackup": {
+    "message": "Ανάκτηση Λογαριασμών"
+  },
+  "stateCorruptionRestoringDatabase": {
+    "message": "Γίνεται ανάκτηση της βάσης δεδομένων…"
+  },
+  "stateCorruptionTheseInstructions": {
+    "message": "αυτές τις οδηγίες",
+    "description": "This is a link to instructions on how to recover your Secret Recovery Phrase manually. It is used in the `stateCorruptionCopyAndRestoreBeforeRecovery` and `stateCorruptionCopyAndRestoreBeforeReset` localization keys."
+  },
+  "stateCorruptionTheseInstructionsLinkTitle": {
+    "message": "Πώς να ανακτήσετε τη Μυστική Φράση Ανάκτησής σας"
   },
   "stateLogError": {
     "message": "Σφάλμα κατά την ανάκτηση αρχείων καταγραφής κατάστασης."
@@ -6252,14 +6260,8 @@
   "termsOfService": {
     "message": "Όροι παροχής υπηρεσιών"
   },
-  "termsOfUseAgreeText": {
-    "message": " Συμφωνώ με τους Όρους Χρήσης, οι οποίοι ισχύουν για τη χρήση του MetaMask και όλων των λειτουργιών του"
-  },
   "termsOfUseFooterText": {
     "message": "Μετακινηθείτε προς τα κάτω για να διαβάσετε όλα τα τμήματα"
-  },
-  "termsOfUseTitle": {
-    "message": "Οι Όροι Χρήσης μας έχουν ενημερωθεί"
   },
   "testNetworks": {
     "message": "Δοκιμαστικά δίκτυα"
@@ -6550,7 +6552,7 @@
     "message": "Μη εγκεκριμένο"
   },
   "unexpectedBehavior": {
-    "message": "Αυτή η συμπεριφορά είναι μη αναμενόμενη και θα πρέπει να αναφερθεί ως σφάλμα, ακόμη και αν οι λογαριασμοί σας έχουν αποκατασταθεί κανονικά. Χρησιμοποιήστε τον παρακάτω σύνδεσμο για να στείλετε στο MetaMask μια αναφορά σφάλματος."
+    "message": "Αυτή η συμπεριφορά είναι απρόβλεπτη και πρέπει να αναφερθεί ως σφάλμα, ακόμη κι αν οι λογαριασμοί σας έχουν αποκατασταθεί."
   },
   "units": {
     "message": "μονάδες"
@@ -6865,9 +6867,6 @@
   },
   "yourTransactionJustConfirmed": {
     "message": "Δεν μπορέσαμε να ακυρώσουμε τη συναλλαγή σας πριν επιβεβαιωθεί από το blockchain."
-  },
-  "yourWalletIsReady": {
-    "message": "Το πορτοφόλι σας είναι έτοιμο"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Μηδενική τιμή συναλλαγών για επίσπευση"

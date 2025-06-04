@@ -372,6 +372,9 @@
   "alertActionUpdateGasFeeLevel": {
     "message": "Gas-Optionen aktualisieren"
   },
+  "alertContentMultipleApprovals": {
+    "message": "Sie erteilen jemand anderem die Genehmigung, Ihre Token abzuheben, obwohl dies für diese Transaktion nicht erforderlich ist."
+  },
   "alertDisableTooltip": {
     "message": "Dies kann in „Einstellungen > Benachrichtigungen“ geändert werden."
   },
@@ -434,6 +437,9 @@
   },
   "alertReasonInsufficientBalance": {
     "message": "Unzureichende Gelder"
+  },
+  "alertReasonMultipleApprovals": {
+    "message": "Unnötige Genehmigung"
   },
   "alertReasonNetworkBusy": {
     "message": "Netzwerk ist ausgelastet"
@@ -3022,9 +3028,6 @@
     "message": "Stellen Sie sicher, dass niemand zuschaut.",
     "description": "Warning to users to be care while creating and saving their new Secret Recovery Phrase"
   },
-  "manageDefaultSettings": {
-    "message": "Standard-Datenschutzeinstellungen verwalten"
-  },
   "manageInstitutionalWallets": {
     "message": "Institutionelle Wallets verwalten"
   },
@@ -3429,9 +3432,6 @@
   "newNftAddedMessage": {
     "message": "NFT wurde erfolgreich hinzugefügt!"
   },
-  "newPassword": {
-    "message": "Neues Passwort (min. 8 Zeichen)"
-  },
   "newPrivacyPolicyActionButton": {
     "message": "Mehr erfahren"
   },
@@ -3805,17 +3805,8 @@
   "onboardingAdvancedPrivacyNetworkTitle": {
     "message": "Wählen Sie Ihr Netzwerk."
   },
-  "onboardingCreateWallet": {
-    "message": "Eine neue Wallet erstellen"
-  },
-  "onboardingImportWallet": {
-    "message": "Existierende Wallet importieren"
-  },
   "onboardingMetametricsAgree": {
     "message": "Ich stimme zu"
-  },
-  "onboardingMetametricsDescription": {
-    "message": "Wir würden gerne grundlegende Nutzungs- und Diagnosedaten sammeln, um MetaMask zu verbessern. Sie sollten wissen, dass wir die Daten, die Sie uns hier zur Verfügung stellen, niemals verkaufen."
   },
   "onboardingMetametricsDescription2": {
     "message": "Wenn wir Metriken sammeln, wird es immer wie folgt sein ..."
@@ -3826,10 +3817,6 @@
   },
   "onboardingMetametricsInfuraTermsPolicy": {
     "message": "Datenschutzrichtlinie"
-  },
-  "onboardingMetametricsNeverCollect": {
-    "message": "$1 Klicks und Aufrufe der App werden gespeichert, andere Details (wie Ihre öffentliche Adresse) jedoch nicht.",
-    "description": "$1 represents `onboardingMetametricsNeverCollectEmphasis`"
   },
   "onboardingMetametricsNeverCollectEmphasis": {
     "message": "Privat:"
@@ -3872,15 +3859,6 @@
   "onboardingPinExtensionChrome": {
     "message": "Klicken Sie auf das Symbol der Browser-Erweiterung."
   },
-  "onboardingPinExtensionDescription": {
-    "message": "Heften Sie MetaMask in Ihrem Browser ab, damit Sie auf die Transaktionsbestätigungen zugreifen und sie leicht einsehen können."
-  },
-  "onboardingPinExtensionDescription2": {
-    "message": "Sie können MetaMask öffnen, indem Sie auf die Erweiterung klicken, und mit nur einem Klick auf Ihre Wallet zugreifen."
-  },
-  "onboardingPinExtensionDescription3": {
-    "message": "Klicken Sie auf das Symbol der Browser-Erweiterung, um sofort darauf zuzugreifen."
-  },
   "onboardingPinExtensionLabel": {
     "message": "MetaMask anheften"
   },
@@ -3889,9 +3867,6 @@
   },
   "onboardingPinExtensionStep2": {
     "message": "2"
-  },
-  "onboardingPinExtensionTitle": {
-    "message": "Ihre MetaMask Installation ist abgeschlossen!"
   },
   "onekey": {
     "message": "OneKey"
@@ -3972,9 +3947,6 @@
   },
   "passwordStrengthDescription": {
     "message": "Ein starkes Passwort kann die Sicherheit Ihrer Wallet erhöhen, falls Ihr Gerät gestohlen oder kompromittiert wird."
-  },
-  "passwordTermsWarning": {
-    "message": "Ich verstehe, dass MetaMask dieses Passwort für mich nicht wiederherstellen kann. $1"
   },
   "passwordsDontMatch": {
     "message": "Passwörter stimmen nicht überein."
@@ -5144,9 +5116,6 @@
   "skipAccountSecurity": {
     "message": "Kontosicherheit überspringen?"
   },
-  "skipAccountSecurityDetails": {
-    "message": "Mir ist klar, dass ich meine Konten und alle dazugehörigen Assets verlieren kann, solange ich keine Sicherungskopie meiner geheimen Wiederherstellungsphrase erstelle."
-  },
   "slideBridgeDescription": {
     "message": "Bewegen Sie sich über 9 Chains, und zwar in Ihrer Wallet"
   },
@@ -5668,7 +5637,7 @@
     "message": "stabil"
   },
   "stake": {
-    "message": "Anteil"
+    "message": "Staken"
   },
   "staked": {
     "message": "Staked"
@@ -5678,6 +5647,45 @@
   },
   "startEarning": {
     "message": "Mit dem Verdienen beginnen"
+  },
+  "stateCorruptionAreYouSure": {
+    "message": "Möchten Sie wirklich fortfahren?"
+  },
+  "stateCorruptionCopyAndRestoreBeforeRecovery": {
+    "message": "Sie können versuchen, Ihre Statusdatei manuell zu kopieren und wiederherzustellen, bevor Sie sich entscheiden, Ihren Tresor wiederherzustellen, indem Sie $1 befolgen.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionCopyAndRestoreBeforeReset": {
+    "message": "Sie können versuchen, Ihre Statusdatei manuell zu kopieren und wiederherzustellen, bevor Sie sich entscheiden, MetaMask zurückzusetzen, indem Sie $1 befolgen.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionDetectedNoBackup": {
+    "message": "Ihr Tresor kann nicht automatisch wiederhergestellt werden."
+  },
+  "stateCorruptionDetectedWithBackup": {
+    "message": "Ihr Tresor kann aus einer automatischen Sicherung wiederhergestellt werden. Bei der automatischen Wiederherstellung werden Ihre aktuellen Einstellungen und Präferenzen gelöscht und nur Ihr Tresor wiederhergestellt."
+  },
+  "stateCorruptionMetamaskDatabaseCannotBeAccessed": {
+    "message": "Interner Fehler: Auf die Datenbank kann nicht zugegriffen werden"
+  },
+  "stateCorruptionResetMetaMaskState": {
+    "message": "MetaMask-Status zurücksetzen"
+  },
+  "stateCorruptionResettingDatabase": {
+    "message": "Datenbank wird zurückgesetzt …"
+  },
+  "stateCorruptionRestoreAccountsFromBackup": {
+    "message": "Konten wiederherstellen"
+  },
+  "stateCorruptionRestoringDatabase": {
+    "message": "Datenbank wird wiederhergestellt …"
+  },
+  "stateCorruptionTheseInstructions": {
+    "message": "diese Anweisungen",
+    "description": "This is a link to instructions on how to recover your Secret Recovery Phrase manually. It is used in the `stateCorruptionCopyAndRestoreBeforeRecovery` and `stateCorruptionCopyAndRestoreBeforeReset` localization keys."
+  },
+  "stateCorruptionTheseInstructionsLinkTitle": {
+    "message": "So stellen Sie Ihre geheime Wiederherstellungsphrase wieder her"
   },
   "stateLogError": {
     "message": "Fehler beim Abfragen der Statusprotokolle."
@@ -6252,14 +6260,8 @@
   "termsOfService": {
     "message": "Nutzungsbedingungen"
   },
-  "termsOfUseAgreeText": {
-    "message": " Ich akzeptiere die Nutzungsbedingungen, die meine Verwendung von MetaMask, einschließlich aller seiner Funktionen, betreffen"
-  },
   "termsOfUseFooterText": {
     "message": "Bitte scrollen, um alle Sektionen zu lesen."
-  },
-  "termsOfUseTitle": {
-    "message": "Unsere Nutzungsbedingungen wurden aktualisiert."
   },
   "testNetworks": {
     "message": "Test-Netzwerke"
@@ -6550,7 +6552,7 @@
     "message": "Nicht genehmigt"
   },
   "unexpectedBehavior": {
-    "message": "Dieses Verhalten ist unerwartet und sollte als Fehler gemeldet werden, selbst wenn Ihre Konten korrekt wiederhergestellt wurden. Verwenden Sie den unten stehenden Link, um MetaMask einen Fehlerbericht zu senden."
+    "message": "Dieses Verhalten ist unerwartet und sollte als Fehler gemeldet werden, auch wenn Ihre Konten wiederhergestellt werden."
   },
   "units": {
     "message": "Einheiten"
@@ -6865,9 +6867,6 @@
   },
   "yourTransactionJustConfirmed": {
     "message": "Wir waren nicht in der Lage, Ihre Transaktion zu stornieren, bevor sie in der Blockchain bestätigt wurde."
-  },
-  "yourWalletIsReady": {
-    "message": "Ihre Wallet ist bereit"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Keine Gas-Kosten bei Beschleunigung"

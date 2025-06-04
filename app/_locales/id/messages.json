@@ -372,6 +372,9 @@
   "alertActionUpdateGasFeeLevel": {
     "message": "Perbarui opsi gas"
   },
+  "alertContentMultipleApprovals": {
+    "message": "Anda memberikan izin kepada orang lain untuk menarik token Anda, meskipun tindakan tersebut tidak diperlukan untuk transaksi ini."
+  },
   "alertDisableTooltip": {
     "message": "Ini dapat diubah dalam \"Pengaturan > Peringatan\""
   },
@@ -434,6 +437,9 @@
   },
   "alertReasonInsufficientBalance": {
     "message": "Dana tidak cukup"
+  },
+  "alertReasonMultipleApprovals": {
+    "message": "Izin yang tidak diperlukan"
   },
   "alertReasonNetworkBusy": {
     "message": "Jaringan sibuk"
@@ -3022,9 +3028,6 @@
     "message": "Pastikan tidak ada yang melihat layar Anda",
     "description": "Warning to users to be care while creating and saving their new Secret Recovery Phrase"
   },
-  "manageDefaultSettings": {
-    "message": "Kelola pengaturan privasi default"
-  },
   "manageInstitutionalWallets": {
     "message": "Kelola Dompet Institutional"
   },
@@ -3429,9 +3432,6 @@
   "newNftAddedMessage": {
     "message": "NFT berhasil ditambahkan!"
   },
-  "newPassword": {
-    "message": "Kata sandi baru (min 8 karakter)"
-  },
   "newPrivacyPolicyActionButton": {
     "message": "Baca selengkapnya"
   },
@@ -3805,17 +3805,8 @@
   "onboardingAdvancedPrivacyNetworkTitle": {
     "message": "Pilih jaringan Anda"
   },
-  "onboardingCreateWallet": {
-    "message": "Buat dompet baru"
-  },
-  "onboardingImportWallet": {
-    "message": "Impor dompet yang ada"
-  },
   "onboardingMetametricsAgree": {
     "message": "Saya setuju"
-  },
-  "onboardingMetametricsDescription": {
-    "message": "Kami ingin mengumpulkan data penggunaan dasar dan diagnostik untuk meningkatkan MetaMask. Pahami bahwa kami tidak pernah menjual data yang Anda berikan di sini."
   },
   "onboardingMetametricsDescription2": {
     "message": "Saat kami mengumpulkan metrik, maka akan selalu..."
@@ -3826,10 +3817,6 @@
   },
   "onboardingMetametricsInfuraTermsPolicy": {
     "message": "Kebijakan Privasi"
-  },
-  "onboardingMetametricsNeverCollect": {
-    "message": "$1 klik dan tampilan pada aplikasi disimpan, tetapi tidak untuk detail lainnya (seperti alamat publik).",
-    "description": "$1 represents `onboardingMetametricsNeverCollectEmphasis`"
   },
   "onboardingMetametricsNeverCollectEmphasis": {
     "message": "Pribadi:"
@@ -3872,15 +3859,6 @@
   "onboardingPinExtensionChrome": {
     "message": "Klik ikon ekstensi browser"
   },
-  "onboardingPinExtensionDescription": {
-    "message": "Sematkan MetaMask pada browser Anda agar dapat diakses dan memudahkan dalam melihat konfirmasi transaksi."
-  },
-  "onboardingPinExtensionDescription2": {
-    "message": "Anda dapat membuka MetaMask dengan mengeklik ekstensi dan mengakses dompet Anda dalam 1 klik."
-  },
-  "onboardingPinExtensionDescription3": {
-    "message": "Klik ikon ekstensi browser untuk mengaksesnya secara langsung"
-  },
   "onboardingPinExtensionLabel": {
     "message": "Sematkan MetaMask"
   },
@@ -3889,9 +3867,6 @@
   },
   "onboardingPinExtensionStep2": {
     "message": "2"
-  },
-  "onboardingPinExtensionTitle": {
-    "message": "Pemasangan MetaMask Anda selesai!"
   },
   "onekey": {
     "message": "OneKey"
@@ -3972,9 +3947,6 @@
   },
   "passwordStrengthDescription": {
     "message": "Kata sandi yang kuat dapat meningkatkan keamanan dompet jika perangkat Anda dicuri atau disusupi."
-  },
-  "passwordTermsWarning": {
-    "message": "Saya memahami bahwa MetaMask tidak dapat memulihkan kata sandi ini untuk saya. $1"
   },
   "passwordsDontMatch": {
     "message": "Kata sandi tidak cocok"
@@ -5144,9 +5116,6 @@
   "skipAccountSecurity": {
     "message": "Lewati keamanan akun?"
   },
-  "skipAccountSecurityDetails": {
-    "message": "Saya memahami bahwa sampai saya mencadangkan Frasa Pemulihan Rahasia, saya dapat kehilangan akun saya dan semua aset yang ada."
-  },
   "slideBridgeDescription": {
     "message": "Berpindah antara 9 chain, semuanya di dalam dompet Anda"
   },
@@ -5678,6 +5647,45 @@
   },
   "startEarning": {
     "message": "Mulai menghasilkan"
+  },
+  "stateCorruptionAreYouSure": {
+    "message": "Yakin ingin melanjutkan?"
+  },
+  "stateCorruptionCopyAndRestoreBeforeRecovery": {
+    "message": "Anda dapat mencoba untuk menyalin dan memulihkan fail state secara manual sebelum memutuskan untuk memulihkan brankas Anda dengan mengikuti $1.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionCopyAndRestoreBeforeReset": {
+    "message": "Anda dapat mencoba untuk menyalin dan memulihkan fail state secara manual sebelum memutuskan untuk mereset MetaMask dengan mengikuti $1.",
+    "description": "$1 represents the `stateCorruptionTheseInstructions` localization key"
+  },
+  "stateCorruptionDetectedNoBackup": {
+    "message": "Brankas Anda tidak dapat dipulihkan secara otomatis."
+  },
+  "stateCorruptionDetectedWithBackup": {
+    "message": "Brankas Anda dapat dipulihkan dari cadangan otomatis. Pemulihan otomatis akan menghapus pengaturan dan preferensi saat ini, dan hanya memulihkan brankas Anda."
+  },
+  "stateCorruptionMetamaskDatabaseCannotBeAccessed": {
+    "message": "Kesalahan Internal: Basis data tidak dapat diakses"
+  },
+  "stateCorruptionResetMetaMaskState": {
+    "message": "Reset State MetaMask"
+  },
+  "stateCorruptionResettingDatabase": {
+    "message": "Mereset basis data…"
+  },
+  "stateCorruptionRestoreAccountsFromBackup": {
+    "message": "Pulihkan Akun"
+  },
+  "stateCorruptionRestoringDatabase": {
+    "message": "Memulihkan basis data…"
+  },
+  "stateCorruptionTheseInstructions": {
+    "message": "petunjuk berikut",
+    "description": "This is a link to instructions on how to recover your Secret Recovery Phrase manually. It is used in the `stateCorruptionCopyAndRestoreBeforeRecovery` and `stateCorruptionCopyAndRestoreBeforeReset` localization keys."
+  },
+  "stateCorruptionTheseInstructionsLinkTitle": {
+    "message": "Cara memulihkan Frasa Pemulihan Rahasia"
   },
   "stateLogError": {
     "message": "Terjadi kesalahan pada log status pengambilan."
@@ -6252,14 +6260,8 @@
   "termsOfService": {
     "message": "Ketentuan layanan"
   },
-  "termsOfUseAgreeText": {
-    "message": " Saya menyetujui Syarat Penggunaan, yang berlaku untuk penggunaan atas MetaMask dan semua fiturnya"
-  },
   "termsOfUseFooterText": {
     "message": "Gulirkan layar untuk membaca semua bagian"
-  },
-  "termsOfUseTitle": {
-    "message": "Syarat Penggunaan kami telah diperbarui"
   },
   "testNetworks": {
     "message": "Jaringan pengujian"
@@ -6550,7 +6552,7 @@
     "message": "Tidak disetujui"
   },
   "unexpectedBehavior": {
-    "message": "Perilaku ini tidak terduga dan harus dilaporkan sebagai bug, meskipun akun Anda telah dipulihkan dengan benar. Gunakan tautan di bawah ini untuk mengirim laporan bug ke MetaMask."
+    "message": "Perilaku ini tidak terduga dan harus dilaporkan sebagai bug, bahkan jika akun Anda dipulihkan."
   },
   "units": {
     "message": "unit"
@@ -6865,9 +6867,6 @@
   },
   "yourTransactionJustConfirmed": {
     "message": "Kami tidak dapat membatalkan transaksi Anda sebelum dikonfirmasi di blockchain."
-  },
-  "yourWalletIsReady": {
-    "message": "Dompet Anda sudah siap"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Biaya gas nol pada percepatan"
